@@ -1,0 +1,60 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java build files
+*.class
+*.war
+*.ear
+
+# Package files
+*.jar
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+
+# IDE-specific files
+/.idea/
+/.vscode/
+/.eclipse/
+/target/
+
+# Node.js files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Liferay workspace specific
+build/
+dist/
+generated/
+bundles/
+
+# Liferay auto-generated files
+.idea/
+.settings/
+.project
+.classpath
+
+# Logs
+logs/
+*.log
+
+# Liferay related
+tmp/
+temp/
+work/
+
+# Configuration files
+*.properties
+*.xml
+*.yml
+*.yaml
+
+# Liferay Client Extensions
+client-extensions/*.jar
+client-extensions/*.zip
+
+# Miscellaneous
+*.iml
