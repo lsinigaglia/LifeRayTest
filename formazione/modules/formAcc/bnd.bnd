@@ -1,4 +1,0 @@
-Bundle-Name: formAcc
-Bundle-SymbolicName: formAcc
-Bundle-Version: 1.0.0
-Export-Package: formAcc.constants

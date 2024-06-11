@@ -1,4 +1,0 @@
-Bundle-Name: searchContainer
-Bundle-SymbolicName: searchContainer
-Bundle-Version: 1.0.0
-Export-Package: searchContainer.constants
