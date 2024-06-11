@@ -1,0 +1,4 @@
+Bundle-Name: formPianiDiFormazione
+Bundle-SymbolicName: formPianiDiFormazione
+Bundle-Version: 1.0.0
+Export-Package: formPianiDiFormazione.constants

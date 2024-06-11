@@ -1,0 +1,21 @@
+INDEX VERSION 1.131
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1433911644.index
+\formAtti\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\99486598.index
+\formPianiFabbisogni\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3303507303.index
+\formAttiDiAdesione\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\181675037.index
+\formAccordoQuadro\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2122651190.index
+\formPiani\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2001876112.index
+\formPianiDiFormazione\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2660836108.index
+\formAcc\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3582038532.index
+\searchContainer\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\848009731.index
+\searchContainer\src\main\java
+C:\Users\A.Stoian\workspaceMagement\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1323712471.index
+\formPia\src\main\java

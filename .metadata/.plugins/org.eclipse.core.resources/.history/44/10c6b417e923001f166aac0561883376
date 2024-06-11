@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+ 
+<service-builder dependency-injector="ds"
+
+	package-path="servicebuilder">
+
+	<namespace>AQ</namespace>
+
+	<entity local-service="true" name="Documenti"
+
+		remote-service="false">
+
+		<column name="Id_CodiceDocumenti" type="long"></column>
+
+		<column name="CodiceDocumento" type="String" primary="true" />
+
+		<column name="NomeFile" type="String" />
+
+		<column name="ContenutoFile" type="String" />
+
+		<column name="Versione" type="String" />
+
+		<column name="DataVersione" type="Date" />
+
+		<column name="DataCaricamento" type="Date" />
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+ 
+	</entity>
+ 
+	<entity local-service="true" remote-service="false"
+
+		name="AccordoQuadro">
+
+		<column name="Id_AccordoQuadro" type="long" primary="true"></column>
+
+		<column primary="false" name="CodiceAccordo" type="String" />
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="Descrizione" type="String" />
+
+		<column name="DataInizioValidita" type="Date" />
+
+		<column name="DataFineValidita" type="Date" />
+
+		<column name="ImportoComplessivo" type="Double" />
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+ 
+	</entity>
+ 
+	<entity local-service="true" remote-service="false"
+
+		name="AttiDiAdesione">
+
+		<column name="Id_AttiDiAdesione" type="long" primary="true"></column>
+
+		<column primary="false" name="CodiceAttoDiAdesione"
+
+			type="String" />
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_accordoQuadro" type="long"></column>
+
+		<column name="Anno" type="Integer" />
+
+		<column name="Stato" type="String" />
+
+		<column name="DataStato" type="Date" />
+
+		<column name="Descrizione" type="String" />
+
+		<column name="ImportoComplessivo" type="Double" />
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+		<finder name="AccordoQuadro" return-type="Collection">
+
+			<finder-column name="FK_accordoQuadro" />
+
+		</finder>
+ 
+	</entity>
+ 
+	<entity local-service="true" remote-service="false"
+
+		name="PianiFabbisogni">
+
+		<column name="Id_PianiFabbisogni" type="long" primary="true" />
+
+		<column primary="false" name="CodicePianoFabbisogno"
+
+			type="String" />
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_attiDiAdesione" type="long"></column>
+
+		<column name="Descrizione" type="String" />
+
+		<column name="Stato" type="String" />
+
+		<column name="DataStato" type="Date" />
+
+		<column name="DataInizioFabbisogni" type="Date" />
+
+		<column name="DataFineFabbisogni" type="Date" />
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+
+		<finder name="AttiDiAdesione" return-type="Collection">
+
+			<finder-column name="FK_attiDiAdesione" />
+
+		</finder>
+ 
+	</entity>
+
+	<entity name="ProgettiFabbisogni" local-service="true"
+
+		remote-service="false">
+
+		<column name="Id_ProgettiFabbisogni" type="long" primary="true"></column>
+
+		<column name="CodiceFabbisogni" type="String" primary="false"></column>
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_progettiFabbisogni" type="long"></column>
+
+		<column name="FK_pianiFabbisogni" type="long"></column>
+
+		<column name="Stato" type="String"></column>
+
+		<column name="DataStato" type="Date"></column>
+
+		<column name="Descrizione" type="String"></column>
+
+		<column name="DataScadenza" type="Date"></column>
+
+		<column name="ImportoComplessivo" type="Double"></column>
+
+		<column name="DataInizioPiano" type="Date"></column>
+
+		<column name="DataFinePiano" type="Date"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+
+		<finder name="PianiFabbisogni" return-type="Collection">
+
+			<finder-column name="FK_pianiFabbisogni" />
+
+		</finder>
+ 
+	</entity>
+
+	<entity name="PianiDiQualita" local-service="true"
+
+		remote-service="false">
+
+		<column name="Id_PianiDiQualita" type="long" primary="true"></column>
+
+		<column name="CodicePianoDiQualita" primary="false"
+
+			type="String"></column>
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_accordoQuadro" type="long"></column>
+
+		<column name="Descrizione" type="String"></column>
+
+		<column name="DataInizioPiano" type="Date"></column>
+
+		<column name="DataFinePiano" type="Date"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+	</entity>
+
+	<entity name="PianiDeiRischi" local-service="true"
+
+		remote-service="false">
+
+		<column name="Id_PianiDeiRischi" type="long" primary="true"></column>
+
+		<column name="CodicePianoDeiRischi" primary="false"
+
+			type="String"></column>
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_accordoQuadro" type="long"></column>
+
+		<column name="Descrizione" type="String"></column>
+
+		<column name="DataInizioPiano" type="Date"></column>
+
+		<column name="DataFinePiano" type="Date"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+ 
+	</entity>
+
+	<entity name="PianiSubentro" local-service="true"
+
+		remote-service="false">
+
+		<column name="Id_PianiSubentro" type="long" primary="true"></column>
+
+		<column name="CodicePianiDiSubentro" primary="false"
+
+			type="String"></column>
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_accordoQuadro" type="long"></column>
+
+		<column name="Descrizione" type="String"></column>
+
+		<column name="DataInizioPiano" type="Date"></column>
+
+		<column name="DataFinePiano" type="Date"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+	</entity>
+
+	<entity name="ContrattiEsecutivi" local-service="true"
+
+		remote-service="false">
+
+		<column name="CodiceContratto" type="String" primary="true"></column>
+
+		<column name="Id_ContrattiEsecutivi" type="long" primary="true"></column>
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_progettiFabbisogni" type="long"></column>
+
+		<column name="Descrizione" type="String"></column>
+
+		<column name="Stato" type="String"></column>
+
+		<column name="DataStato" type="Date"></column>
+
+		<column name="DataInizioContratto" type="Date"></column>
+
+		<column name="DataFineContratto" type="Date"></column>
+
+		<column name="ImportoComplessivo" type="Double"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+	</entity>
+ 
+ 
+	<entity name="PianiDiLavoroObiettivo" local-service="true"
+
+		remote-service="false">
+
+		<column name="Id_PianoDiLavoro" type="long" primary="true" />
+
+		<column name="CodicePianoLavoroObiettivo" type="String" />
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="FK_progettiFabbisogni" type="long"></column>
+
+		<column name="Descrizione" type="String" />
+
+		<column name="DataInizioPiano" type="Date"></column>
+
+		<column name="DataFinePiano" type="Date" />
+
+		<column name="ImportoComplessivo" type="Double"></column>
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+
+		<finder name="ProgettiFabbisogni" return-type="Collection">
+
+			<finder-column name="FK_progettiFabbisogni" />
+
+		</finder>
+ 
+	</entity>
+ 
+	<entity name="StatoAvanzamentoLavori" local-service="true"
+
+		remote-service="falso">
+
+		<column name="Id_SAL" type="long" primary="true" />
+
+		<column name="FK_documenti" type="long"></column>
+
+		<column name="CodiceSAL" type="String" />
+
+		<column name="Descrizione" type="String" />
+
+		<column name="Stato" type="String" />
+
+		<column name="DataStato" type="Date" />
+
+		<column name="MeseAnnoRiferimento" type="String" />
+
+		<column name="ImportoComplessivo" type="Double" />
+ 
+		<!-- audit -->
+
+		<column name="userIns" type="String" />
+
+		<column name="userAgg" type="String" />
+
+		<column name="dataIns" type="Date" />
+
+		<column name="dataAgg" type="Date" />
+ 
+	</entity>
+ 
+	<!-- Many-to-Many Relationship Table -->
+ 
+	<entity name="PianoStatoRel" local-service="true" remote-service="true">
+
+		<column name="Id_Relazione" type="long" primary="true" />
+
+		<column name="Id_PianodiLavoro" type="long" />
+
+		<column name="Id_SAL" type="long" />
+ 
+	</entity>
+ 
+</service-builder>
